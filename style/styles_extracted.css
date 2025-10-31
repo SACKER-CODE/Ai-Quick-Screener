@@ -1,0 +1,258 @@
+/* ============================================
+   AI QUICK SCREENER - STYLESHEET
+   ============================================ */
+
+/* ==== CSS VARIABLES ==== */
+:root {
+  /* Colors */
+  --color-primary: #00ffd5;
+  --color-secondary: #0077ff;
+  --color-bg-dark: #112849;
+  --color-bg-darker: #0d1117;
+  --color-bg-black: #000;
+  --color-text-light: #f5f5f5;
+  --color-text-dark: #000;
+  --color-white-alpha-5: rgba(255, 255, 255, 0.05);
+  --color-white-alpha-6: rgba(255, 255, 255, 0.06);
+  --color-primary-alpha-2: rgba(0, 255, 200, 0.2);
+  --color-primary-alpha-3: rgba(0, 255, 200, 0.3);
+  
+  /* Status Colors */
+  --color-excellent: #00ff88;
+  --color-good: #ffcc00;
+  --color-needs-improvement: #ff5555;
+  
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 1.8rem;
+  --space-xl: 2rem;
+  
+  /* Border Radius */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  
+  /* Shadows */
+  --shadow-base: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 12px 30px rgba(0, 255, 200, 0.3);
+  --shadow-glow: 0 0 10px var(--color-primary);
+  
+  /* Typography */
+  --font-family: 'Poppins', sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --letter-spacing: 0.5px;
+  
+  /* Transitions */
+  --transition-smooth: all 0.3s ease;
+}
+
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+
+body,
+.stApp {
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+
+/* ============================================
+   BACKGROUND & LAYOUT
+   ============================================ */
+
+/* Particle Background Canvas */
+#particle-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: radial-gradient(
+    circle at 20% 20%,
+    var(--color-bg-darker),
+    var(--color-bg-black)
+  );
+}
+
+/* Main Container */
+.main,
+.block-container {
+  position: relative;
+  z-index: 2;
+  padding-top: var(--space-xl);
+}
+
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing);
+}
+
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+/* Feature Card */
+.feature-card {
+  background: var(--color-white-alpha-5);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  box-shadow: var(--shadow-base);
+  backdrop-filter: blur(12px);
+  transition: var(--transition-smooth);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Course Card */
+.course-card {
+  background: var(--color-white-alpha-6);
+  border: 1px solid var(--color-primary-alpha-2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm);
+  margin: var(--space-xs) 0;
+  text-align: center;
+}
+
+.course-card h4 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.course-card a {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.course-card a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+button,
+.stButton > button {
+  background: linear-gradient(90deg, #c9cbcb, var(--color-secondary));
+  color: var(--color-text-dark);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1.2rem;
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+button:hover,
+.stButton > button:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+
+/* ============================================
+   ATS SCORE COMPONENT
+   ============================================ */
+
+/* Container */
+.ats-score-container {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-sm) 0;
+}
+
+/* Outer Circle */
+.ats-score-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+/* Inner Circle */
+.ats-score-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85px;
+  height: 85px;
+  background: var(--color-bg-darker);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+/* Score Status Classes */
+.score-excellent {
+  color: var(--color-excellent);
+}
+
+.score-good {
+  color: var(--color-good);
+}
+
+.score-needs-improvement {
+  color: var(--color-needs-improvement);
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .feature-card {
+    padding: var(--space-sm);
+  }
+  
+  .ats-score-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .ats-score-inner {
+    width: 70px;
+    height: 70px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main,
+  .block-container {
+    padding-top: var(--space-sm);
+  }
+  
+  button,
+  .stButton > button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
