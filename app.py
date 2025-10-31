@@ -49,8 +49,8 @@ from ui_components import (
 # ============================================================================
 
 PAGE_CONFIG = {
-    "page_title": "Smart Resume AI",
-    "page_icon": "🚀",
+    "page_title": "AI QUICK SCREENER",
+    "page_icon": "🤖",
     "layout": "wide"
 }
 
