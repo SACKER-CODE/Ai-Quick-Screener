@@ -690,7 +690,7 @@ class ResumeApp:
                 st_lottie(animation_data, height=200, key="sidebar_animation")
             
             # Title
-            st.title("Smart Resume AI")
+            st.title("AI QUICK SCREENER")
             st.markdown("---")
             
             # Navigation Buttons
