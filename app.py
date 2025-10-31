@@ -197,33 +197,46 @@ class ResumeApp:
     # PAGE: HOME
     # ========================================================================
     
-    def render_home(self) -> None:
-        """Render the home page with hero section and features."""
+    def render_home(self):
+        """Render the home/landing page"""
         apply_modern_styles()
         
         # Hero Section
         hero_section(
-            "Smart Resume AI",
-            "Transform your career with AI-powered resume analysis and building. "
-            "Get personalized insights and create professional resumes that stand out."
+            "AI QuickScreener",
+            "Transform your hiring process with AI-powered resume screening. "
+            "Screen hundreds of candidates in minutes, eliminate unconscious bias, "
+            "and find the perfect match for every role. Say goodbye to manual resume "
+            "reviews and hello to faster, smarter, and more accurate hiring decisions "
+            "that help you build exceptional teams."
         )
         
-        # Feature Grid
+        # Feature Cards
         st.markdown('<div class="feature-grid">', unsafe_allow_html=True)
+        
         feature_card(
-            "fas fa-robot",
-            "AI-Powered Analysis",
-            "Instant feedback on your resume using advanced AI."
+            "",
+            "Intelligent Candidate Screening",
+            "Automatically analyze and rank resumes using advanced natural language "
+            "processing and machine learning. Our intelligent algorithms evaluate "
+            "candidate qualifications, skills, and experience against your job "
+            "requirements with precision, saving you hours of manual review time."
         )
+        
         feature_card(
-            "fas fa-chart-line",
-            "Career Insights",
-            "Get personalized recommendations for career growth."
+            "",
+            "Recommendations & Analytics",
+            "Get comprehensive analytics and visualizations of your candidate pool. "
+            "Understand skill distributions, identify top talent instantly, and make "
+            "informed hiring decisions backed by data. Reduce time-to-hire by up to "
+            "75% while improving candidate quality."
         )
+        
         st.markdown('</div>', unsafe_allow_html=True)
         
         # Call-to-Action Button
         self._render_cta_button()
+
     
     def _render_cta_button(self) -> None:
         """Render the call-to-action button on the home page."""
