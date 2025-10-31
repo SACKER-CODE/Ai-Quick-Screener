@@ -146,8 +146,8 @@ class ResumeApp:
     def _setup_pages(self) -> None:
         """Configure available pages and their render functions."""
         self.pages = {
-            "🏠 HOME": self.render_home,
-            "🔍 RESUME ANALYZER": self.render_analyzer,
+            "HOME": self.render_home,
+            "RESUME ANALYZER": self.render_analyzer,
         }
     
     def _initialize_components(self) -> None:
